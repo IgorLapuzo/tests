@@ -1,7 +1,7 @@
-const mapArrToStrings = (arr) => {
+const mapArrayToString= (arr) => {
 	return arr
 		.filter(item => Number.isInteger(item))
 		.map(String);
 }
 
-module.exports = mapArrToStrings;
+module.exports = mapArrayToString;
