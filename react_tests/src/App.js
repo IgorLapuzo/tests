@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+/*import { useEffect, useState } from "react";
 
 function App() {
   const [data, setData] = useState(null);
@@ -22,6 +22,29 @@ function App() {
       <input onChange={e => setValue(e.target.value)} type='text' placeholder='input value'></input>
     </div>
   );
+}
+
+export default App;
+*/
+
+import React from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
+import MainPage from './pages/MainPage';
+import AboutPage from './pages/AboutPage';
+import ErrorPage from './pages/ErrorPage';
+
+const App = () => {
+  return (
+    <div>
+      <Link to='/' data-testid='main-link'>main</Link>
+      <Link to='/about' data-testid='about-link'>about</Link>
+      <Routes>
+        <Route path='/' element={<MainPage/>} />
+        <Route path='/about' element={<AboutPage/>} />
+        <Route path='/*' element={<ErrorPage/>} />
+      </Routes>
+    </div>
+  )
 }
 
 export default App;
